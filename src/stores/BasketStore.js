@@ -2,7 +2,8 @@ import { createStore } from "redux";
 
 let initialState = {
     inBasket : [],
-    basketTotal : 0
+    basketTotal : 0,
+    displayIndex : 0
 };
 
 function basketAction(state = initialState, action = {}) {
@@ -20,6 +21,10 @@ function basketAction(state = initialState, action = {}) {
                 inBasket : products,
                 basketTotal : getBasketTotal(products)
             });
+        case "UPDATEDISPLAYINDEX":
+            return Object.assign({}, state, {
+                displayIndex : action.state
+            });
         default:
             return state;
     }
@@ -30,7 +35,7 @@ function addProductToBasket(basket, product) {
 }
 
 function removeProductFromBasket(basket, product) {
-    return basket.filter(prod => Number(prod.id) !== Number(product.id))
+    return basket.filter(prod => prod.id !== product.id);
 }
 
 function getBasketTotal(products) {

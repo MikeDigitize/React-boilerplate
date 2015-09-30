@@ -2,7 +2,7 @@ import React from "react";
 import CSSModule from "react-css-modules";
 import styles from "./product-select.scss";
 import BasketStore from "stores/BasketStore";
-import { addProduct } from "actions/basket-actions";
+import { addProduct, updateDisplayIndex } from "actions/basket-actions";
 import { getProducts } from "utils/getProducts";
 
 class AddProduct extends React.Component {
@@ -32,7 +32,8 @@ class AddProduct extends React.Component {
                 <select
                     ref="addProduct"
                     className="form-control"
-                    styleName="select-styles">
+                    styleName="select-styles"
+                    onChange={ this.onProductChange.bind(this) }>
                     { options }
                 </select>
                 <button
@@ -61,12 +62,17 @@ class AddProduct extends React.Component {
         BasketStore.dispatch(addProduct({
             name : selected.value,
             cost : selected.getAttribute("data-cost"),
-            id : this.getUniqueId()
+            id : this.getUniqueId(selected.getAttribute("data-reactid"))
         }));
     }
 
-    getUniqueId() {
-        return this.unique++;
+    getUniqueId(id) {
+        return id + (this.unique++);
+    }
+
+    onProductChange() {
+        let options = React.findDOMNode(this.refs.addProduct).options;
+        BasketStore.dispatch(updateDisplayIndex(options.selectedIndex));
     }
 
 }

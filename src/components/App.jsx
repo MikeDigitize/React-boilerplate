@@ -4,8 +4,15 @@ import ProductSelect from "./ProductSelect/ProductSelect.jsx";
 import BasketStore from "stores/BasketStore";
 import BasketList from "./BasketList/BasketList.jsx";
 import BasketTotal from "./BasketTotal/BasketTotal.jsx";
+import ProductCards from "./ProductCards/ProductCards.jsx";
 
 class App extends React.Component {
+
+    componentDidMount() {
+        BasketStore.subscribe(() => {
+            console.log("State: ", BasketStore.getState());
+        });
+    }
 
     render() {
         return (
@@ -14,6 +21,7 @@ class App extends React.Component {
                 <ProductSelect />
                 <BasketList />
                 <BasketTotal />
+                <ProductCards />
             </div>
         )
     }

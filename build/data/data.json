@@ -1,14 +1,17 @@
 {
   "products" : [{
     "name" : "Washing Machine",
-    "cost" : 339
+    "cost" : 300,
+    "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi blandit ultrices augue, eget ultricies urna mattis ut. Fusce sit amet nunc egestas libero ornare faucibus. Pellentesque vel ex fermentum, semper leo sed, egestas risus. Nunc viverra ligula sed nulla lobortis, non fringilla lorem aliquet. Morbi cursus enim vel auctor ornare. Nunc sodales ultricies tellus, sed tempus ligula gravida quis. Praesent lacinia vestibulum dui viverra interdum. Mauris semper nec nisi sed fringilla."
   },
-  {
-    "name" : "Washer Dryer",
-    "cost" : 440
-  },
-  {
-    "name" : "Tumble Dryer",
-    "cost" : 280
-  }]
+    {
+      "name" : "Washer Dryer",
+      "cost" : 400,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi blandit ultrices augue, eget ultricies urna mattis ut. Fusce sit amet nunc egestas libero ornare faucibus. Pellentesque vel ex fermentum, semper leo sed, egestas risus. Nunc viverra ligula sed nulla lobortis, non fringilla lorem aliquet. Morbi cursus enim vel auctor ornare. Nunc sodales ultricies tellus, sed tempus ligula gravida quis. Praesent lacinia vestibulum dui viverra interdum. Mauris semper nec nisi sed fringilla."
+    },
+    {
+      "name" : "Tumble Dryer",
+      "cost" : 250,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi blandit ultrices augue, eget ultricies urna mattis ut. Fusce sit amet nunc egestas libero ornare faucibus. Pellentesque vel ex fermentum, semper leo sed, egestas risus. Nunc viverra ligula sed nulla lobortis, non fringilla lorem aliquet. Morbi cursus enim vel auctor ornare. Nunc sodales ultricies tellus, sed tempus ligula gravida quis. Praesent lacinia vestibulum dui viverra interdum. Mauris semper nec nisi sed fringilla."
+    }]
 }
