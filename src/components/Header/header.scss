@@ -1,0 +1,39 @@
+.centred {
+  text-align:center;
+}
+
+.green-text {
+  color: #7FBA23;
+}
+
+.white-background {
+  background: #ffffff;
+  padding: 10px;
+}
+
+/*
+ *  Consolidating CSS classes
+ */
+
+.header-styles {
+  composes : centred;
+  composes : white-background;
+  composes : green-text;
+}
+
+/*
+ *  Consolidating SASS classes
+ */
+
+.header-sass {
+  @extend .bold;
+  @extend .large-text;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.large-text {
+  font-size: 40px;
+}

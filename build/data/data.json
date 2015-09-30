@@ -1,0 +1,14 @@
+{
+  "products" : [{
+    "name" : "Washing Machine",
+    "cost" : 339
+  },
+  {
+    "name" : "Washer Dryer",
+    "cost" : 440
+  },
+  {
+    "name" : "Tumble Dryer",
+    "cost" : 280
+  }]
+}

@@ -1,0 +1,22 @@
+import React from "react";
+import Header from "./Header/Header.jsx";
+import ProductSelect from "./ProductSelect/ProductSelect.jsx";
+import BasketStore from "stores/BasketStore";
+import BasketList from "./BasketList/BasketList.jsx";
+import BasketTotal from "./BasketTotal/BasketTotal.jsx";
+
+class App extends React.Component {
+
+    render() {
+        return (
+            <div>
+                <Header />
+                <ProductSelect />
+                <BasketList />
+                <BasketTotal />
+            </div>
+        )
+    }
+}
+
+React.render(<App />, document.querySelector(".app-holder"));
