@@ -1,21 +1,44 @@
 import { createStore } from "redux";
 
 let initialState = {
-    inBasket : []
+    inBasket : [],
+    basketTotal : 0
 };
 
 function basketAction(state = initialState, action = {}) {
+    let products;
     switch (action.type) {
         case "ADD":
+            products = addProductToBasket(state.inBasket, action.state);
             return Object.assign({}, state, {
-                inBasket : state.inBasket.concat(action.state)
+                inBasket : products,
+                basketTotal : getBasketTotal(products)
             });
         case "REMOVE":
+            products = removeProductFromBasket(state.inBasket, action.state);
             return Object.assign({}, state, {
-                inBasket : state.inBasket.filter(prod => Number(prod.id) !== Number(action.state.id))
+                inBasket : products,
+                basketTotal : getBasketTotal(products)
             });
         default:
             return state;
+    }
+}
+
+function addProductToBasket(basket, product) {
+    return basket.concat(product);
+}
+
+function removeProductFromBasket(basket, product) {
+    return basket.filter(prod => Number(prod.id) !== Number(product.id))
+}
+
+function getBasketTotal(products) {
+    if(!products.length) {
+        return 0;
+    }
+    else {
+        return products.map(product => product.cost).reduce((price, nxtPrice) => Number(price) + Number(nxtPrice));
     }
 }
 

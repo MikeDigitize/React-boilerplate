@@ -27,7 +27,7 @@ export default class BasketList extends React.Component {
                 key={i}
                 data-id={ product.id }
                 data-cost={ product.cost }
-                data-value={ product.name } >
+                data-value={ product.name }>
                 { product.name }
             </li>);
     }

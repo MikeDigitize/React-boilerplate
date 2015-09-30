@@ -3,6 +3,7 @@ import CSSModule from "react-css-modules";
 import styles from "./product-select.scss";
 import BasketStore from "stores/BasketStore";
 import { addProduct } from "actions/basket-actions";
+import { getProducts } from "utils/getProducts";
 
 class AddProduct extends React.Component {
 
@@ -15,10 +16,7 @@ class AddProduct extends React.Component {
     }
 
     componentWillMount() {
-        fetch('/data/data.json')
-            .then(response => {
-               return response.json()
-            })
+        getProducts()
             .then(data => {
                 this.setState({
                     products : data.products
