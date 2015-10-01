@@ -50,25 +50,25 @@ class ProductCards extends React.Component {
                     ref="card">
                     <div
                         styleName="card">
-                        <h3>{ card.name }</h3>
-                        <p styleName="desc">{ card.description }</p>
-                        <p styleName="cost">&pound;{ card.cost }</p>
-                        <button
-                            className="btn btn-success"
-                            styleName="button-styles"
-                            onClick={ this.addProduct.bind(this)}>
-                                Add to basket
-                        </button>
-                        <i
-                            className="fa fa-arrow-circle-left"
-                            styleName="card-control left"
-                            onClick={ this.showPrevProduct.bind(this) }>
-                        </i>
-                        <i
-                            className="fa fa-arrow-circle-right"
-                            styleName="card-control right"
-                            onClick={ this.showNextProduct.bind(this) }>
-                        </i>
+                            <h3>{ card.name }</h3>
+                            <p styleName="desc">{ card.description }</p>
+                            <p styleName="cost">&pound;{ card.cost }</p>
+                            <button
+                                className="btn btn-success"
+                                styleName="button-styles"
+                                onClick={ this.addProduct.bind(this)}>
+                                    Add to basket
+                            </button>
+                            <i
+                                className="fa fa-arrow-circle-left"
+                                styleName="card-control left"
+                                onClick={ this.showPrevProduct.bind(this) }>
+                            </i>
+                            <i
+                                className="fa fa-arrow-circle-right"
+                                styleName="card-control right"
+                                onClick={ this.showNextProduct.bind(this) }>
+                            </i>
                     </div>
                 </div>
             );

@@ -16,6 +16,39 @@ class BasketList extends React.Component {
     }
 
     componentDidUpdate() {
+        this.animateBasketList();
+    }
+
+    render() {
+        let listItems = this.createList();
+        return (
+            <div
+                styleName="basket-list"
+                ref="basketList">
+                    <em>Your basket</em>
+                    <ol>{ listItems }</ol>
+            </div>
+        );
+    }
+
+    createList() {
+        return this.state.products.map((product, i) =>
+            <li
+                className="basket-product"
+                key={i}
+                data-id={ product.id }
+                data-cost={ product.cost }
+                data-value={ product.name }>
+                    { product.name }
+                <i
+                    className="fa fa-times"
+                    styleName="close"
+                    onClick={ this.removeProduct.bind(this) }>
+                </i>
+            </li>);
+    }
+
+    animateBasketList() {
         let listItems = this.createList();
         let styles = { height : (!listItems.length ? 0 : 50 + (listItems.length * 40)) + "px" };
         let basketList = React.findDOMNode(this.refs.basketList);
@@ -42,36 +75,6 @@ class BasketList extends React.Component {
         }).then(() => {
             console.log("all done!");
         });
-
-    }
-
-    render() {
-        let listItems = this.createList();
-        return (
-            <div
-                styleName="basket-list"
-                ref="basketList">
-                    <em>Your basket</em>
-                    <ol>{ listItems }</ol>
-            </div>
-        );
-    }
-
-    createList() {
-        return this.state.products.map((product, i) =>
-            <li
-                className="basket-product"
-                key={i}
-                data-id={ product.id }
-                data-cost={ product.cost }
-                data-value={ product.name }>
-                { product.name }
-                <i
-                    className="fa fa-times"
-                    styleName="close"
-                    onClick={ this.removeProduct.bind(this) }>
-                </i>
-            </li>);
     }
 
     basketUpdate() {
