@@ -29,19 +29,22 @@ class AddProduct extends React.Component {
         let options = this.createOptions();
         return (
             <div className="col-sm-4 col-sm-offset-4" styleName="add-product-holder">
-                <h2>Pick a product</h2>
+                <h2
+                    styleName="title">
+                        Pick a product
+                </h2>
                 <select
                     ref="addProduct"
                     className="form-control"
                     styleName="select-styles"
                     onChange={ this.onProductChange.bind(this) }>
-                    { options }
+                        { options }
                 </select>
                 <button
                     onClick={ this.addProduct.bind(this) }
                     className="btn btn-success"
                     styleName="button-styles">
-                    Add Product
+                        Add Product
                 </button>
             </div>
         );

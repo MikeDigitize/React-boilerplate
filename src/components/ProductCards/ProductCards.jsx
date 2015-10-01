@@ -16,7 +16,7 @@ class ProductCards extends React.Component {
             lastIndex : 0
         };
         this.unique = 0;
-        this.cardControlsEnabled = true;
+        this.cardControlsEnabled = false;
         BasketStore.subscribe(this.updateDisplayIndex.bind(this));
     }
 
@@ -115,7 +115,6 @@ class ProductCards extends React.Component {
             this.cardControlsEnabled = false;
             BasketStore.dispatch(updateDisplayIndex(this.state.displayIndex === this.state.cards.length - 1 ? 0 : this.state.displayIndex + 1));
         }
-        console.log("next!");
     }
 
     showPrevProduct() {
@@ -123,7 +122,6 @@ class ProductCards extends React.Component {
             this.cardControlsEnabled = false;
             BasketStore.dispatch(updateDisplayIndex(this.state.displayIndex > 0 ? this.state.displayIndex - 1 : this.state.cards.length - 1));
         }
-        console.log("prev!");
     }
 
     updateDisplayIndex() {

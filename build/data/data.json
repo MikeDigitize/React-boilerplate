@@ -13,5 +13,25 @@
       "name" : "Tumble Dryer",
       "cost" : 250,
       "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi blandit ultrices augue, eget ultricies urna mattis ut. Fusce sit amet nunc egestas libero ornare faucibus. Pellentesque vel ex fermentum, semper leo sed, egestas risus. Nunc viverra ligula sed nulla lobortis, non fringilla lorem aliquet. Morbi cursus enim vel auctor ornare. Nunc sodales ultricies tellus, sed tempus ligula gravida quis. Praesent lacinia vestibulum dui viverra interdum. Mauris semper nec nisi sed fringilla."
+    },
+    {
+      "name" : "American Fridge Freezer",
+      "cost" : 990,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi blandit ultrices augue, eget ultricies urna mattis ut. Fusce sit amet nunc egestas libero ornare faucibus. Pellentesque vel ex fermentum, semper leo sed, egestas risus. Nunc viverra ligula sed nulla lobortis, non fringilla lorem aliquet. Morbi cursus enim vel auctor ornare. Nunc sodales ultricies tellus, sed tempus ligula gravida quis. Praesent lacinia vestibulum dui viverra interdum. Mauris semper nec nisi sed fringilla."
+    },
+    {
+      "name" : "Microwave",
+      "cost" : 60,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi blandit ultrices augue, eget ultricies urna mattis ut. Fusce sit amet nunc egestas libero ornare faucibus. Pellentesque vel ex fermentum, semper leo sed, egestas risus. Nunc viverra ligula sed nulla lobortis, non fringilla lorem aliquet. Morbi cursus enim vel auctor ornare. Nunc sodales ultricies tellus, sed tempus ligula gravida quis. Praesent lacinia vestibulum dui viverra interdum. Mauris semper nec nisi sed fringilla."
+    },
+    {
+      "name" : "4k TV",
+      "cost" : 2850,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi blandit ultrices augue, eget ultricies urna mattis ut. Fusce sit amet nunc egestas libero ornare faucibus. Pellentesque vel ex fermentum, semper leo sed, egestas risus. Nunc viverra ligula sed nulla lobortis, non fringilla lorem aliquet. Morbi cursus enim vel auctor ornare. Nunc sodales ultricies tellus, sed tempus ligula gravida quis. Praesent lacinia vestibulum dui viverra interdum. Mauris semper nec nisi sed fringilla."
+    },
+    {
+      "name" : "Beats Headphones",
+      "cost" : 170,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi blandit ultrices augue, eget ultricies urna mattis ut. Fusce sit amet nunc egestas libero ornare faucibus. Pellentesque vel ex fermentum, semper leo sed, egestas risus. Nunc viverra ligula sed nulla lobortis, non fringilla lorem aliquet. Morbi cursus enim vel auctor ornare. Nunc sodales ultricies tellus, sed tempus ligula gravida quis. Praesent lacinia vestibulum dui viverra interdum. Mauris semper nec nisi sed fringilla."
     }]
 }

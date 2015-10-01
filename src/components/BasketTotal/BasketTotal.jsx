@@ -16,7 +16,7 @@ class BasketTotal extends React.Component {
     render() {
         return(
             <div className="col-sm-4 col-sm-offset-4">
-                <p styleName="total">&pound;{ this.state.total }</p>
+                <p styleName="total">Basket total: <span styleName="cost">&pound;{ this.state.total }</span></p>
             </div>
         );
     }
