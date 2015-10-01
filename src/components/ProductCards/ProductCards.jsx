@@ -2,6 +2,7 @@ import React from "react";
 import CSSModule from "react-css-modules";
 import styles from "./product-cards.scss";
 import BasketStore from "stores/BasketStore";
+import Animator from "utils/animator.min";
 import { addProduct, updateDisplayIndex } from "actions/basket-actions";
 import { getProducts } from "utils/getProducts";
 
@@ -11,10 +12,30 @@ class ProductCards extends React.Component {
         super();
         this.state = {
             cards : [],
-            displayIndex : 0
+            displayIndex : 0,
+            lastIndex : 0
         };
         this.unique = 0;
         BasketStore.subscribe(this.updateDisplayIndex.bind(this));
+    }
+
+    componentDidUpdate() {
+        let card = React.findDOMNode(this.refs.card);
+        let prev = this.state.lastIndex;
+        let next = this.state.displayIndex;
+        let animation = prev === next ? "bounceInDown" : prev < next ? "bounceInRight" : "bounceInLeft";
+        let sequence = Animator.animation({
+            element : card,
+            addClass : {
+                before : animation
+            },
+            removeClass : {
+                after : animation
+            }
+        });
+        sequence.then(function() {
+            console.log("animation done");
+        });
     }
 
     componentWillMount() {
@@ -34,7 +55,7 @@ class ProductCards extends React.Component {
         else {
             return (
                 <div
-                    className="col-sm-8 col-sm-offset-2"
+                    className="col-sm-8 col-sm-offset-2 animated"
                     styleName="card-holder"
                     ref="card">
                     <div
@@ -69,6 +90,7 @@ class ProductCards extends React.Component {
 
     updateDisplayIndex() {
         this.setState({
+            lastIndex : this.state.displayIndex,
             displayIndex : BasketStore.getState().displayIndex
         });
     }
