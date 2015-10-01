@@ -1,5 +1,22 @@
 .card-holder {
   position: relative;
+
+  .card-control {
+    font-size: 40px;
+    color: #7FBA23;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    cursor: pointer;
+
+    &.left {
+      left: -20px;
+    }
+
+    &.right {
+      right: -20px;
+    }
+  }
 }
 
 .card {
@@ -22,5 +39,16 @@
   .cost {
     font-size: 18px;
     font-weight: bold;
+  }
+  .button-styles {
+    background-color: #7FBA23;
+    transition: background-color 1s ease;
+    border: none;
+    &:hover {
+      background-color: lighten(#7FBA23, 10%);
+    }
+    &:focus {
+      outline: none;
+    }
   }
 }

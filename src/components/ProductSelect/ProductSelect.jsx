@@ -13,6 +13,7 @@ class AddProduct extends React.Component {
             products : []
         };
         this.unique = 0;
+        BasketStore.subscribe(this.updateDisplayIndex.bind(this));
     }
 
     componentWillMount() {
@@ -73,6 +74,11 @@ class AddProduct extends React.Component {
     onProductChange() {
         let options = React.findDOMNode(this.refs.addProduct).options;
         BasketStore.dispatch(updateDisplayIndex(options.selectedIndex));
+    }
+
+    updateDisplayIndex() {
+        let options = React.findDOMNode(this.refs.addProduct).options;
+        options.selectedIndex = BasketStore.getState().displayIndex;
     }
 
 }
