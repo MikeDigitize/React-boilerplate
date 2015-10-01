@@ -20,7 +20,6 @@ class ProductCards extends React.Component {
     componentWillMount() {
         getProducts()
             .then(data => {
-                console.log("data", data);
                 this.setState({
                     cards : data.products
                 });

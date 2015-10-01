@@ -1,45 +1,35 @@
 import { createStore } from "redux";
 
-let initialState = {
-    inBasket : [],
-    basketTotal : 0,
-    displayIndex : 0
-};
+function basketApp(state = {}, action = {}) {
+    return {
+        inBasket : updateBasket(state.inBasket, action),
+        basketTotal : getBasketTotal(updateBasket(state.inBasket, action)),
+        displayIndex : updateDisplayedProductIndex(state.displayIndex, action)
+    }
+}
 
-function basketAction(state = initialState, action = {}) {
-    let products;
+function updateBasket(state = [], action = {}) {
     switch (action.type) {
         case "ADD":
-            products = addProductToBasket(state.inBasket, action.state);
-            return Object.assign({}, state, {
-                inBasket : products,
-                basketTotal : getBasketTotal(products)
-            });
+            return state.concat(action.state);
         case "REMOVE":
-            products = removeProductFromBasket(state.inBasket, action.state);
-            return Object.assign({}, state, {
-                inBasket : products,
-                basketTotal : getBasketTotal(products)
-            });
-        case "UPDATEDISPLAYINDEX":
-            return Object.assign({}, state, {
-                displayIndex : action.state
-            });
+            return state.filter(prod => prod.id !== action.state.id);
         default:
             return state;
     }
 }
 
-function addProductToBasket(basket, product) {
-    return basket.concat(product);
-}
-
-function removeProductFromBasket(basket, product) {
-    return basket.filter(prod => prod.id !== product.id);
+function updateDisplayedProductIndex(state = 0, action = {}) {
+    switch (action.type) {
+        case "UPDATEDISPLAYINDEX":
+            return action.state;
+        default:
+            return state;
+    }
 }
 
 function getBasketTotal(products) {
-    if(!products.length) {
+    if(!products || !products.length) {
         return 0;
     }
     else {
@@ -47,5 +37,5 @@ function getBasketTotal(products) {
     }
 }
 
-let basket = createStore(basketAction);
-export default basket;
+let basketStore = createStore(basketApp);
+export default basketStore;

@@ -8,12 +8,6 @@ import ProductCards from "./ProductCards/ProductCards.jsx";
 
 class App extends React.Component {
 
-    componentDidMount() {
-        BasketStore.subscribe(() => {
-            console.log("State: ", BasketStore.getState());
-        });
-    }
-
     render() {
         return (
             <div>
