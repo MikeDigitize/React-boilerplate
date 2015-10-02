@@ -2,7 +2,7 @@
 
 This is a starter template for React projects using <code>ES2015</code>, <code>Webpack</code>, <code>CSS Modules</code> and <code>Redux</code> that I built for some colleagues at AO.com to introduce them to the wonderful world of React. 
 
-The app itself is simnple but helps demonstrate: 
+The app itself is simple but helps demonstrate: 
 * How <code>Redux's</code> interpretation of <code>Flux</code> is used to handle the flow of data through a single store, which performs all logic calculations and broadcasts results out to interested view components.
 * How <code>CSS Modules</code> are used to compile SASS and then locally scope the resulting CSS to individual components.
 * How <code>Webpack</code> and <code>Babel</code> are used to manage dependencies and transpile the ES2015 React components into ES5 production code. 
