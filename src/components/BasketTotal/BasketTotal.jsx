@@ -1,9 +1,7 @@
 import React from "react";
-import CSSModule from "react-css-modules";
-import styles from "./basket-total.scss";
 import BasketStore from "stores/BasketStore";
 
-class BasketTotal extends React.Component {
+export default class BasketTotal extends React.Component {
 
     constructor() {
         super();
@@ -16,7 +14,7 @@ class BasketTotal extends React.Component {
     render() {
         return(
             <div className="col-sm-4 col-sm-offset-4">
-                <p styleName="total">Basket total: <span styleName="cost">&pound;{ this.state.total }</span></p>
+                <p style={this.getTotalStyles()}>Basket total: <span style={this.getCostStyles()}>&pound;{ this.state.total }</span></p>
             </div>
         );
     }
@@ -27,6 +25,21 @@ class BasketTotal extends React.Component {
         });
     }
 
+    getTotalStyles() {
+        return {
+            fontSize: "18px",
+            fontWeight: "normal",
+            textAlign: "right",
+            color: "#333"
+        }
+    }
+
+    getCostStyles() {
+        return {
+            fontWeight: "bold",
+            fontSize: "25px"
+        }
+    }
 }
 
-export default CSSModule(BasketTotal, styles);
+//export default CSSModule(BasketTotal, styles);

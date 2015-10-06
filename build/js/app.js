@@ -80,7 +80,7 @@
 
 	var _BasketTotalBasketTotalJsx2 = _interopRequireDefault(_BasketTotalBasketTotalJsx);
 
-	var _ProductCardsProductCardsJsx = __webpack_require__(207);
+	var _ProductCardsProductCardsJsx = __webpack_require__(206);
 
 	var _ProductCardsProductCardsJsx2 = _interopRequireDefault(_ProductCardsProductCardsJsx);
 
@@ -20548,7 +20548,7 @@
 	    return Header;
 	})(_react2["default"].Component);
 
-	exports["default"] = (0, _reactCssModules2["default"])(Header, _headerScss2["default"], { allowMultiple: true });
+	exports["default"] = (0, _reactCssModules2["default"])(Header, _headerScss2["default"]);
 	module.exports = exports["default"];
 
 /***/ },
@@ -24231,14 +24231,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactCssModules = __webpack_require__(158);
-
-	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
-
-	var _basketTotalScss = __webpack_require__(206);
-
-	var _basketTotalScss2 = _interopRequireDefault(_basketTotalScss);
-
 	var _storesBasketStore = __webpack_require__(190);
 
 	var _storesBasketStore2 = _interopRequireDefault(_storesBasketStore);
@@ -24256,6 +24248,8 @@
 	        _storesBasketStore2["default"].subscribe(this.updateTotal.bind(this));
 	    }
 
+	    //export default CSSModule(BasketTotal, styles);
+
 	    _createClass(BasketTotal, [{
 	        key: "render",
 	        value: function render() {
@@ -24264,11 +24258,11 @@
 	                { className: "col-sm-4 col-sm-offset-4" },
 	                _react2["default"].createElement(
 	                    "p",
-	                    { styleName: "total" },
+	                    { style: this.getTotalStyles() },
 	                    "Basket total: ",
 	                    _react2["default"].createElement(
 	                        "span",
-	                        { styleName: "cost" },
+	                        { style: this.getCostStyles() },
 	                        "£",
 	                        this.state.total
 	                    )
@@ -24282,23 +24276,34 @@
 	                total: _storesBasketStore2["default"].getState().basketTotal
 	            });
 	        }
+	    }, {
+	        key: "getTotalStyles",
+	        value: function getTotalStyles() {
+	            return {
+	                fontSize: "18px",
+	                fontWeight: "normal",
+	                textAlign: "right",
+	                color: "#333"
+	            };
+	        }
+	    }, {
+	        key: "getCostStyles",
+	        value: function getCostStyles() {
+	            return {
+	                fontWeight: "bold",
+	                fontSize: "25px"
+	            };
+	        }
 	    }]);
 
 	    return BasketTotal;
 	})(_react2["default"].Component);
 
-	exports["default"] = (0, _reactCssModules2["default"])(BasketTotal, _basketTotalScss2["default"]);
+	exports["default"] = BasketTotal;
 	module.exports = exports["default"];
 
 /***/ },
 /* 206 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-	module.exports = {"total":"_2qr5iDu0ggtFfXfK1wsWGX","cost":"_30KzJAHOtPZLgA8HSjtduI"};
-
-/***/ },
-/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -24325,7 +24330,7 @@
 
 	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 
-	var _productCardsScss = __webpack_require__(208);
+	var _productCardsScss = __webpack_require__(207);
 
 	var _productCardsScss2 = _interopRequireDefault(_productCardsScss);
 
@@ -24504,7 +24509,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 208 */
+/* 207 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

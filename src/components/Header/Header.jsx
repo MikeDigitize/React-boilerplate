@@ -14,4 +14,4 @@ class Header extends React.Component {
 
 }
 
-export default CSSModule(Header, styles, { allowMultiple : true });
+export default CSSModule(Header, styles);
