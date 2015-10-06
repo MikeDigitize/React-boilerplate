@@ -10,7 +10,7 @@ module.exports = {
     },
     resolve: {
         root: path.resolve(__dirname + "/src"),
-        extensions: ["", ".js", ".jsx"]
+        extensions: ["", ".js", ".jsx", ".scss"]
     },
     output: {
         path: __dirname + "/build",
@@ -25,12 +25,14 @@ module.exports = {
         }, {
             test: /\.scss|.css$/,
             loader: ExtractTextPlugin.extract("style-loader", "css-loader?modules!sass")
+        }, {
+            test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+            loader: "url-loader?limit=100000"
         }]
     },
     watch : true,
     plugins:[
         new HtmlWebpackPlugin({ template: "./src/index.html"}),
-        new ExtractTextPlugin("./styles/[name].css", { allChunks : true }),
-        new Uglify()
+        new ExtractTextPlugin("./styles/[name].css", { allChunks : true })
     ]
 };

@@ -91,7 +91,7 @@ class ProductCards extends React.Component {
         let next = this.state.displayIndex;
         let animation = prev === next ? "bounceInDown" : "fadeInUp";
         let duration = Animator.getPrefix("animation-duration");
-        Animator.setStyles(card, Animator.createCSSRule(duration, "0.6s"));
+        Animator.setStyles(card, Animator.createCSSRule(duration, "0.2s"));
         let sequence = Animator.animation({
             element : card,
             addClass : {

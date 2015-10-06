@@ -1,0 +1,49 @@
+@import url(https://fonts.googleapis.com/css?family=Bitter);
+
+/*	Colours */
+$red: #E5002D;
+$blue: #3B96A7;
+$cream: #F8EFE1;
+$gold: #AB905B;
+$offwhite: #EEEEEE;
+$white: #ffffff;
+$black: #2E3333;
+$aogreen: #7FBA23;
+
+/*	Text */
+$heading-font: league_gothicregular;
+$text-font: "Bitter", Georgia, serif;
+$default-font-size: 1.3em;
+$text-shadow: rgba(0, 0, 0, 0.5) -4px 5px 5px;
+
+@font-face {
+  font-family: league_gothicregular;
+  src:  url("styles/fonts/league_gothic-webfont.eot"),
+        url("styles/fonts/league_gothic-webfont.eot?#iefix") format("embedded-opentype"),
+        url("styles/fonts/league_gothic-webfont.woff") format("woff"),
+        url("styles/fonts/league_gothic-webfont.ttf") format("truetype"),
+        url("styles/fonts/league_gothic-webfont.svg#league_gothicregular") format("svg");
+  font-weight: normal;
+}
+
+/* Breakpoints */
+$lg : 1200px;
+$md : 990px;
+$sm : 768px;
+$xs : 480px;
+
+/*	General classes */
+$box-shadow: rgba(0, 0, 0, 0.5) 0 5px 5px;
+$default-spacing: 20px;
+.dashed-borders {
+  padding: $default-spacing 0 0;
+  border-top: 1px dashed $gold;
+  border-bottom: 1px dashed $gold;
+}
+
+@mixin font-styles($fontsize) {
+  font-family: $heading-font;
+  font-size: $fontsize;
+  letter-spacing: 2px;
+  -webkit-font-smoothing: antialiased;
+}

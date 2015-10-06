@@ -1,14 +1,20 @@
+@import "../../styles/global.scss";
+
 .centred {
   text-align:center;
 }
 
 .green-text {
-  color: #7FBA23;
+  color:$aogreen;
 }
 
 .white-background {
   background: #ffffff;
   padding: 2px;
+}
+
+.font {
+  @include font-styles(45px);
 }
 
 /*
@@ -26,12 +32,13 @@
  */
 
 .header-sass {
-  @extend .bold;
+  @extend .not-bold;
   @extend .large-text;
+  @extend .font;
 }
 
-.bold {
-  font-weight: bold;
+.not-bold {
+  font-weight: normal;
 }
 
 .large-text {
