@@ -1,5 +1,5 @@
 import React from "react";
-import BasketStore from "stores/BasketStore";
+import BasketStore from "../../stores/BasketStore";
 
 export default class BasketTotal extends React.Component {
 
